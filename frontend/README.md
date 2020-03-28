@@ -70,3 +70,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # libs:
 npm install react-icons <br />
 npm install react-router-dom <br />
+npm install axios <br />
