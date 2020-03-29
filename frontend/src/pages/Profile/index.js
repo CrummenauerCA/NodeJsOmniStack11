@@ -7,11 +7,12 @@ import './styles.css'
 import logoImg from '../../assets/logo.svg'
 
 export default function Profile() {
+  const ongName = localStorage.getItem('ongName')
   return (
     <div className="profile-container">
       <header>
         <img src={logoImg} alt="Be The Hero" />
-        <span>Bem vindo, APAD</span>
+        <span>Bem vindo, {ongName}</span>
 
         <Link className="button" to="/incidents/new">
           Cadastrar novo caso
