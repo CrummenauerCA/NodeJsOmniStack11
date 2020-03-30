@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+
+import Routes from './src/routes'
 
 export default function App() {
-  return <Text>Hello World2!</Text>
+  return <Routes />
 }
