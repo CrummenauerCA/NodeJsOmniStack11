@@ -7,3 +7,5 @@ npm install @react-navigation/stack <br />
 expo install expo-constants <br />
 
 expo install expo-mail-composer <br />
+
+npm install axios <br />
