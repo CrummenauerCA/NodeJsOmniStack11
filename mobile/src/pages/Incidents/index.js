@@ -1,3 +1,5 @@
+import 'intl'
+import 'intl/locale-data/jsonp/pt-BR'
 import React, { useEffect, useState } from 'react'
 import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native'
 import { Feather } from '@expo/vector-icons'
@@ -41,7 +43,7 @@ export default function Incidents() {
 
       <FlatList style={styles.incidentList}
         data={incidents}
-        keyExtractor={incident => incident.id}
+        keyExtractor={incident => String(incident.id)}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.incident}>
@@ -52,7 +54,11 @@ export default function Incidents() {
             <Text style={styles.incidentValue}>{item.description}</Text>
 
             <Text style={styles.incidentProperty}>Valor:</Text>
-            <Text style={styles.incidentValue}>{item.value}</Text>
+            <Text style={styles.incidentValue}>{
+              Intl.NumberFormat('pt-BR', {
+                style: 'currency', currency: 'BRL'
+              }).format(item.value)
+            }</Text>
 
             <TouchableOpacity
               style={styles.detailsButton}
